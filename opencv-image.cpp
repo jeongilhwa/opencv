@@ -16,9 +16,10 @@ using namespace std;
 int main()
 {
 	//이미지를 저장할 Mat 객체를 생성
-	Mat image;
+	Mat image = imread("wifi.jpg", IMREAD_COLOR);
 
-	image = imread("wifi.jpg", IMREAD_COLOR);
+	//Rect 사각형의 위치와 크기정보를 표현      clone()깊은복사
+	Mat image2 = image(Rect(220, 120, 340, 240)).clone();
 	//imread()함수를 사용하여 이미지를 읽어 리턴되는 mat객체를 변수에 대입
 	if (image.empty())
 	{
